@@ -31,6 +31,7 @@ img {
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+    text-align: center;
 }
 .contenedor h1 {
     color: var(--secundario);
@@ -59,6 +60,15 @@ h3 {
 .header {
     display: flex;
     justify-content: center;
+    background-image: url(/img/guitar_4k_5k.jpg);
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header h1 {
+    color: #ffffff;
+    font-size: 20rem;
 }
 .header__logo {
     margin: 3rem 0;
@@ -131,6 +141,10 @@ h3 {
 .producto {
     background-color: rgb(77, 77, 77);
     padding:2rem;
+    border-radius: 10px;
+}
+.producto:hover {
+    background-color: rgb(126, 125, 125);
 }
 .producto__imagen {
     width: 100%;
@@ -212,4 +226,30 @@ h3 {
 } 
 .icon {
     width: 100%;
+}
+#boton-products {
+    width: 300px;
+    height: 70px;
+    padding: 10px 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+/* producto */
+.guitar {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.guitar__content {
+    text-align: center;
+}
+.guitar__image {
+    width: 15%;
+    height: 15%;
+    padding: 10px 12px;
+
 }
