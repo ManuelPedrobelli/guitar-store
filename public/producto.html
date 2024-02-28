@@ -14,43 +14,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"> Products </a>
+        <a class="navegacion__enlace" href="nosotros.html"> About us </a>      
+    </nav>
     <header class="header">
          <a href="index.html">
             <h1 class="header__logo"> Guitar Store </h1>  <!-- AGREGAR IMAGEN LOGO -->
          </a>
     </header>
 
-        <nav class="navegacion">
-            <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"> Products </a>
-            <a class="navegacion__enlace" href="nosotros.html"> About us </a>      
-        </nav>
+ 
     
     <main class="contenedor">
-        <h1> Jackson JS Dinky™ JS32Q </h1>
-
-        <div class="guitar">
-            <img class="guitar__image" src="img/jackson1.png" alt="guitar product image">
-
-            <div class="guitar__content">
-                
-                <p>Guitar name: Jackson Dinky JS32</p>
-                <p>Scale: 25.5</p>
-                <p>Fretboard: Rosewood</p>
-                <p>Body: Mahogany</p>
-                <p>Mics: Jackson Pro Hambucker</p>
-                <form class="formulario">
-                    <select class="formulario__campo">
-                        <option disabled selected> Select string caliber </option>
-                        <option> Caliber .09 </option>
-                        <option> Caliber .10 </option>
-                        <option> Caliber .11 </option>
-                        <input class="formulario__submit" type="submit" value="Add to cart">
-                    </select>
-                </form>
-            </div>
-
+        <div id="product">
+            <div id="product-details"></div>
+            <img id="product-image" src="" alt="Producto">
         </div>
+        
+
 
     </main>
 
@@ -59,6 +41,6 @@
         <p class="footer__text">Guitar store. Todos los derechos reservados 2022. Manuel Pedrobelli</p>
     </footer>
 
-    
+    <script src="producto.js"></script>
 </body>
 </html>

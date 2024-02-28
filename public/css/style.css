@@ -1,7 +1,7 @@
 :root {
     --fuente-principal: 'Staatliches', cursive;
     --primario: black;
-    --secundario: rgb(212, 68, 68);
+    --secundario: rgb(196, 0, 0);
     --blanco: white;
     --fondo: #797979;
     --secundarioOscuro: rgb(173, 53, 53);
@@ -18,7 +18,7 @@ body {
     font-size: 1.6rem; 
     line-height: 1.5; /* 1 rem = 10 px */
     font-family: var(--fuente-principal);
-    background-color:#222;
+    background-color:#191919;
 
 }
 *, *:before, *:after {
@@ -26,8 +26,14 @@ body {
 }
 a {
     text-decoration: none;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
 }
-
+.contenedor_comprar {
+    margin: 0 auto;
+}
 .contenedor {
     width: 80%;
     margin: 0 auto;
@@ -62,7 +68,8 @@ h3 {
     justify-content: center;
     align-items: center;
     background-image: url('../img/bannerIMG.jpg');
-    height: 82vh;
+    background-size: cover;
+    height: 90vh;
 }
 .header h1 {
     color: white;
@@ -106,7 +113,7 @@ h3 {
     width: auto;
 }
 .nav-bg {
-    background-color:rgb(35, 35, 35);
+    background-color:rgb(18, 18, 18);
 }
 /*---- footer ----*/
 .footer {
@@ -118,12 +125,16 @@ h3 {
     text-align: center;
     font-family: var(--fuente-principal);
     font-size: 2.2rem;
+    width: 100%;
+    margin-top: 2rem;
 }
 /* ---- Grid --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    place-items: center;
+    margin: auto auto;
 }
 @media (min-width: 768px) {
     .grid {
@@ -131,23 +142,24 @@ h3 {
     }
 }
 
+
 /* ---- Productos --- */
 .producto {
-    background-color:  rgb(117, 113, 113);
+    background-color:  rgb(178, 173, 173);
     padding: 4rem;
     border: 1px solid white;
-    height: 80rem;
-    width: 50rem;
+    height: 60rem;
+    width: 40rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .producto__imagen {
-    width: 50%;
-    height: 80%;
+    max-width: 45%;
+    max-height: 45%;
 }
 .producto:hover {
-    background-color: rgb(102, 86, 86);
+    background-color: rgb(235, 232, 232);
 }
 .producto__precio {
     font-size: 2.8rem;
@@ -156,6 +168,7 @@ h3 {
 .producto__nombre {
     font-size: 3rem;
     text-align: center;
+    color: black;
 }
 .producto__nombre,
 .producto__precio {
@@ -164,20 +177,6 @@ h3 {
     text-align: center;
     line-height: 1.2;
 }
-
-@media (min-width: 768px) {
-    .grafico--parkwaydrive {
-        grid-row: 4 / 5;
-        grid-column: 2 / 4;
-        background-image: url(../img/banner1.jpg);
-    }
-    .grafico--korn {
-        grid-row: 2 / 3;
-        grid-column: 2 / 4;
-        background-image: url(../img/banner3.jpg);
-    }
-}
-
 
 /* --- Nosotros --- */
 .nosotros {
@@ -195,6 +194,7 @@ h3 {
 }
 .nosotros__imagen {
     grid-row: 1 / 2;
+    width: 70%;
 }
 @media (min-width: 768px) {
     .nosotros__imagen {
@@ -214,7 +214,13 @@ h3 {
 }
 .bloque {
     text-align: center;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
 }
+
+.bloque:hover {
+    transform: scale(1.1); /* Aplica un ligero zoom al hacer hover */
+}
+
 .bloque__titulo {
     margin: 0;
 } 
@@ -276,4 +282,30 @@ h3 {
     font-size: 2.4rem;
     cursor: pointer;
     background-color: var(--secundarioOscuro);
+}
+#product {
+    display: flex;
+    flex-direction: row;    
+    padding: 5rem;
+    width: 80%;
+    margin: 2rem auto;
+    background-color: #222;
+    border-radius: 5%;
+    border: 2px solid grey;
+}
+#product-details {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#product-image {
+    margin: 0 auto;
+    transition: transform 0.5s;
+    width: 20%;
+}
+
+#product-image:hover {
+    transform: scale(1.1); /* Aplica un aumento de escala del 120% al hacer hover */
 }
