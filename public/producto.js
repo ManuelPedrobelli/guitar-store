@@ -17,7 +17,10 @@ window.onload = async () => {
         // Obtener el elemento donde se mostrarán los detalles del producto
         const productDetailsContainer = document.getElementById('product-details');
         const productContainer = document.getElementById('product');
-
+        
+        const addToCartButton = document.createElement('button');
+        addToCartButton.textContent = 'Add to cart';
+        addToCartButton.classList.add('cart-button');
         // Crear y configurar la imagen del producto
         const productImageElement = document.getElementById('product-image');
         productImageElement.src = product.image;
@@ -49,6 +52,7 @@ window.onload = async () => {
         productDetailsContainer.appendChild(productModelElement);
         productDetailsContainer.appendChild(productDescElement);
         productDetailsContainer.appendChild(productPriceElement);
+        productDetailsContainer.appendChild(addToCartButton);
         productContainer.appendChild(productImageElement);
         productContainer.appendChild(productDetailsContainer);
 
