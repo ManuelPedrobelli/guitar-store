@@ -19,7 +19,6 @@ body {
     line-height: 1.5; /* 1 rem = 10 px */
     font-family: var(--fuente-principal);
     background-color:#191919;
-
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -35,7 +34,7 @@ a {
     margin: 0 auto;
 }
 .contenedor {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 .contenedor h1 {
@@ -146,17 +145,17 @@ h3 {
 /* ---- Productos --- */
 .producto {
     background-color:  rgb(178, 173, 173);
-    padding: 4rem;
+    padding: 2rem;
     border: 1px solid white;
-    height: 60rem;
-    width: 40rem;
+    width: 45rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .producto__imagen {
-    max-width: 45%;
-    max-height: 45%;
+    max-width: 70%;
+    max-height: 70%;
 }
 .producto:hover {
     background-color: rgb(235, 232, 232);
@@ -284,12 +283,14 @@ h3 {
     background-color: var(--secundarioOscuro);
 }
 #product {
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: row;    
-    padding: 5rem;
+    padding: 2rem;
     width: 80%;
     margin: 2rem auto;
-    background-color: #222;
+    background-color: rgb(178, 173, 173);
     border-radius: 5%;
     border: 2px solid grey;
 }
@@ -299,13 +300,19 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 5%;
+    height: 70%;
 }
 #product-image {
     margin: 0 auto;
     transition: transform 0.5s;
     width: 20%;
+    max-width: 100%; /* Ajusta la anchura máxima de la imagen del producto */
 }
 
+
 #product-image:hover {
-    transform: scale(1.1); /* Aplica un aumento de escala del 120% al hacer hover */
+    transform: scale(1.01); /* Aplica un aumento de escala del 120% al hacer hover */
 }

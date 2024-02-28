@@ -27,16 +27,16 @@ window.onload = async () => {
         const productNameElement = document.createElement('h2');
         productNameElement.textContent = product.name;
 
-        const productBrandElement = document.createElement('p');
+        const productBrandElement = document.createElement('h3');
         productBrandElement.textContent = 'Brand: ' + product.brand;
 
-        const productModelElement = document.createElement('p');
+        const productModelElement = document.createElement('h3');
         productModelElement.textContent = 'Model: ' + product.model;
 
-        const productDescElement = document.createElement('p');
+        const productDescElement = document.createElement('h3');
         productDescElement.textContent = 'Desc: ' + product.desc;
 
-        const productPriceElement = document.createElement('p');
+        const productPriceElement = document.createElement('h3');
         productPriceElement.textContent = 'Price: $' + product.price;
 
         // Limpiar cualquier contenido anterior en el contenedor
