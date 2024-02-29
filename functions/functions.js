@@ -103,26 +103,27 @@ const port = 3000
       "image": "img/solar2.png"
     }
   ]
+  app.use("/", express.static("public"));
 
-app.get('/api/products', (req, res) => {
-  res.send(products)
-})
-
-app.use("/", express.static("public"));
-
-app.listen(port, () => {
-  console.log(`App started on port: ${port}`)
-})
-
-app.get('/api/products/:productId', (req, res) => {
-  const productId = req.params.productId;
+  // Ruta para obtener todos los productos
+  app.get('/api/products', (req, res) => {
+      res.send(products);
+  });
   
-  const product = products[productId]; // Esto es un ejemplo, necesitas implementar getProductById
-  if (product) {
-      res.send(product);
-  } else {
-      res.status(404).send('Producto no encontrado');
-  }
-});
-
-
+  // Ruta para obtener un producto por su ID
+  app.get('/api/products/:productId', (req, res) => {
+      const productId = parseInt(req.params.productId);
+      
+      const product = products.find(product => product.ID === productId);
+      if (product) {
+          res.send(product);
+      } else {
+          res.status(404).send('Producto no encontrado');
+      }
+  });
+  
+  // Iniciar el servidor
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+      console.log(`App started on port: ${PORT}`);
+  });
