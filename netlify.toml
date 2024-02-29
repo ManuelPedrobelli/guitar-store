@@ -1,0 +1,9 @@
+
+[build]
+  base = "public"
+  command = "npm run build"
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
