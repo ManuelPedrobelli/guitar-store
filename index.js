@@ -117,12 +117,14 @@ app.listen(port, () => {
 app.get('/api/products/:productId', (req, res) => {
   const productId = req.params.productId;
   
-  const product = products[productId]; // Esto es un ejemplo, necesitas implementar getProductById
+  const productIndex = productId - 1; // Restar 1 para obtener el índice correcto
+  const product = products[productIndex]; 
   if (product) {
       res.send(product);
   } else {
       res.status(404).send('Producto no encontrado');
   }
 });
+
 
 
