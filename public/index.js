@@ -38,11 +38,14 @@ function displayProducts(productList) {
 
 
 
-window.onload = async () => {
-    try {
-        // Obtener la lista de productos y mostrarlos
-        const productList = await (await fetch("/api/products")).json();
-        displayProducts(productList);
+        window.onload = async () => {
+            try {
+                // Obtener la lista de productos y mostrarlos
+                const productListResponse = await fetch("/api/products");
+                const productList = await productListResponse.json();
+                console.log("Respuesta de la lista de productos:", productList); // Agregar este console.log para depurar la respuesta
+        
+                displayProducts(productList);
 
         // Seleccionar todos los elementos con la clase '.producto'
         const productos = document.querySelectorAll('.producto');
