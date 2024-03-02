@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
-
+const cors = require('cors');
+app.use(cors());
   products = [
     {
       "ID": 0,
@@ -116,9 +117,8 @@ app.listen(port, () => {
 
 app.get('/api/products/:productId', (req, res) => {
   const productId = req.params.productId;
-  
-  const productIndex = productId - 1; // Restar 1 para obtener el índice correcto
-  const product = products[productIndex]; 
+  const product = products.find(product => product.ID === parseInt(productId));
+
   if (product) {
       res.send(product);
   } else {
