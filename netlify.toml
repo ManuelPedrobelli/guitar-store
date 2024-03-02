@@ -1,6 +1,6 @@
 [build]
 command = "npm start"
-publish = 'public' # Ruta de la carpeta a desplegar
+publish = "public" # Ruta de la carpeta a desplegar
 
 [dev]
 command = "npm start"
