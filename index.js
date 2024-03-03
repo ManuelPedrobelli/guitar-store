@@ -2,7 +2,11 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: 'https://65e33d7bdd2735caefe1874f--metalguitars-mp.netlify.app/productlist', // Solo permitir solicitudes desde este dominio
+  methods: ['GET', 'POST'], // Solo permitir solicitudes GET y POST
+  allowedHeaders: ['Content-Type', 'Authorization'], // Solo permitir estos encabezados en las solicitudes
+}));
   products = [
     {
       "ID": 0,
