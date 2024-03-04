@@ -41,7 +41,7 @@ function displayProducts(productList) {
         window.onload = async () => {
             try {
                 // Obtener la lista de productos y mostrarlos
-                const productListResponse = await fetch("/api/products");
+                const productListResponse = await fetch(".netlify/functions/api/products");
                 const productList = await productListResponse.json();
                 console.log("Respuesta de la lista de productos:", productList); // Agregar este console.log para depurar la respuesta
         

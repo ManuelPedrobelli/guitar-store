@@ -106,7 +106,7 @@ const products = [
 ]
 
 router.get('/products', (req, res) => {
-  res(products);
+  res.json(products);
 });
 
 router.get('/products/:productId', (req, res) => {

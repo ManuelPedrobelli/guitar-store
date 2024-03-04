@@ -6,7 +6,7 @@ window.onload = async () => {
             return;
         }
 
-        const response = await fetch(`/api/products/${productId}`);
+        const response = await fetch(`.netlify/functions/api/products/${productId}`);
         if (!response.ok) {
             console.error('Error al obtener los detalles del producto');
             return;
