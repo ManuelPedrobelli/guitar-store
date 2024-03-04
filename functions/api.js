@@ -1,6 +1,9 @@
-const express = require('express')
+const express = require('express');
+const serverless = require('serverless-http');
 const app = express()
-const port = 3000
+const router = express.Router();
+const cors = require('cors');
+
 
   products = [
     {
@@ -104,11 +107,15 @@ const port = 3000
     }
   ]
 
-app.get('/api/products', (req, res) => {
+/*app.get('/api/products', (req, res) => {
+  res.send(products)
+})*/
+app.get('/productList', (req, res) => {
   res.send(products)
 })
-
 app.use("/", express.static("public"));
+app.use('/.netlify/functions/api', router);
+module.exports.handler = serverless(app);
 
 app.listen(port, () => {
   console.log(`App started on port: ${port}`)
@@ -116,8 +123,8 @@ app.listen(port, () => {
 
 app.get('/api/products/:productId', (req, res) => {
   const productId = req.params.productId;
-  
-  const product = products[productId]; // Esto es un ejemplo, necesitas implementar getProductById
+  const product = products.find(product => product.ID === parseInt(productId));
+
   if (product) {
       res.send(product);
   } else {
@@ -126,4 +133,4 @@ app.get('/api/products/:productId', (req, res) => {
 });
 
 
-    
+
